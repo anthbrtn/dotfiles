@@ -1,0 +1,14 @@
+
+{
+    "firefox": "noentry",
+    "chromium-browser": "noentry",
+    "chrome": "noentry",
+    "google-chrome": "noentry",
+    "x-terminal-emulator": "noentry",
+    "thunderbird": "noentry",
+    "jetbrains-idea-ce": "edit",
+    "nautilus": "noentry",
+    "clementine": "music",
+    "vlc": "play",
+    "signal": "noentry"
+}

@@ -1,0 +1,199 @@
+This is a cheat-sheet for my emacs config.
+
+
+* General keybindings
+*** Save file
+SPC f s
+*** Save file as
+SPC f S
+*** New file
+SPC b N for a new buffer
+SPC f S to then save it as a new file
+If you do this step right away, it'll then launch the mode for the file with all
+its nice things
+*** Search text
+In normal mode, hit / then enter
+Use n to navigate forward through results
+Use p to navigate backward through results
+*** Find and replace
+M-% (so Alt+shift+"5" key)
+*** Redo
+M-_ (so Alt+shift+"-" key)
+*** Undo
+C-_ (so Ctrl+shift+"-" key)
+*** Undo-tree in left pane
+C-x u
+*** Quit
+SPC q q
+** File selection
+*** See list of files in current directory
+SPC SPC
+*** Switch to another open file in workspace
+SPC b b
+*** Switch to another open file in entire program
+SPC b B
+
+*** Open directory browser (can edit from there)
+SPC o -
+** Window management
+*** Switch window
+C-x o for switching to, say, the other window
+SPC w o does the same thing
+SPC w <insert vim keybinding for direction>
+*** Open new window underneath
+SPC w s
+*** Open new window beside
+SPC w v
+*** Delete window
+SPC w d
+** Workspaces
+Workspaces are a /bit/ fucky in that they don't directly correspond to projects,
+although this is probably a good thing in the long term - lets you open files.
+*** List workspaces
+SPC TAB TAB
+*** Switch workspace
+SPC TAB <workspace number>
+*** Switch to next workspace
+SPC TAB ]
+*** Switch to previous workspace
+SPC TAB [
+*** Make new workspace
+SPC TAB n
+*** Name workspace
+SPC TAB r
+** Projects
+Projects are essentially frameworks, the top of a directory, with files.
+The general leader key is SPC p
+*** Switch project
+SPC p p
+*** See list of files in project
+SPC p .
+*** Save all project files
+SPC p s
+*** Search project
+SPC p f
+*** Add a new project
+SPC p a
+*** Delete a project
+SPC p d
+
+** Configure emacs
+*** Open private configuration files
+SPC f P
+*** Customize a single variable
+M-x customize-variable
+*** Search keybindings
+M-x general-describe-keybindings
+*** Help menu
+SPC h
+* (ma)Git
+*** For now
+Just use M-x and search for the thing
+* Org keybindings
+** Org writing
+*** Move to beginning of line
+C-a
+*** Move to end of line
+C-e
+*** Insert link
+SPC m l
+*** Remove link
+SPC m L
+*** Manually add link
+The format of links is
+#+begin_example
+[[url or filename relative to point][description or link text]]
+#+end_example
+*** Bold text
+Put the text between *two asterisks*. Org automatically does this.
+*** Italicize text
+Put the text between /two slashes/. Org automatically does this.
+*** Underline text
+Put the text between _two underscores_. Org automatically does this.
+*** Monospace text
+Put the text between =two equal signs=. Org automatically does this.
+** Org journal
+*** Open today's journal entry for creation
+SPC j j
+*** Open previous day's entry
+SPC j p
+*** Search journal
+SPC j s
+*** Save journal entry & exit
+SPC j f
+** Headings
+*** Move to next heading in normal mode
+] ]
+*** Move to previous heading in normal mode
+[ [
+*** Toggle heading
+z a
+*** Close/collapse current heading
+z c
+*** Remove or add heading status
+SPC m h
+*** Toggle list or heading status
+SPC m i
+** Org to-do and agenda
+Org to_do is kind of annoying because any combination you write it in, it treats
+it as a task to scan (except for underscores)
+*** Edit =to-do= status
+SPC m t
+*** See =to-do= list
+SPC m T
+*** Add deadline to =to-do= task
+SPC m d
+*** Open agenda
+SPC o A
+=OR=
+SPC o a a
+*** View to_do list
+SPC o a t
+
+* Academic stuff
+*** Search and enter bibtex entries
+M-x ivy-bibtex and then search
+*** Are you stuck writing?
+M-x academic-phrases.
+** PDF mode
+*** Add highlight
+C-c C-a h
+pdf-annot-add-highlight-markup-annotation
+*** Add text annotation
+C-c C-a t
+pdf-annot-add-text-annotation
+*** List annotations
+C-c C-a l
+pdf-annot-list-annotations
+*** Copy highlighted text from PDF
+y
+*** Navigate pages
+It's the vim keybindings, luckily
+* Snippets
+Snippet mode is way more powerful than I thought... many things can be expanded
+with just a tab.
+*** Add org to_do
+Type out =todo= then tab.
+*** Load snippet menu
+SPC s
+*** View all snippets for mode
+Be careful: this won't insert, it'll show you keybindings though
+SPC s /
+*** Add snippet
+SPC s i
+** Org mode
+*** Insert org source block
+Hit <s then tab
+*** Insert example of code (lets you write out raw org syntax)
+Hit <q then tab
+You can also, for a single line, just wrap it in =code tags=
+*** Insert author property tag
+Hit <au then tab
+*** Insert title property tag
+Hit <ti then tab
+*** Insert table
+Hit <ta then tab
+*** Start new org project
+Hit __project.org then tab
+*** Start new generic org file with title
+Hit __ then tab
