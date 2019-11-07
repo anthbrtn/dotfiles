@@ -71,6 +71,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fzf colored-man-pages battery bd autojump ubuntu)
 
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
