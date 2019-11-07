@@ -7,7 +7,7 @@ my dotfiles are managed with [rcm](https://github.com/thoughtbot/rcm)
 
 # how it works
 
-edit the files as they are located in ```~/.dotfiles```. run ```dotup``` in the terminal to apply changes.
+edit the files as they are located in ```~/.dotfiles```. run ```updot``` in the terminal to apply changes.
 
 # using on another computer
 
