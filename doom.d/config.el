@@ -250,7 +250,7 @@ This is, when it doesn't already have a sudo-prefix."
 (setq doom-font (font-spec :family "SF Mono"
                            ;; :width 'semi-condensed
                            :weight 'semi-light
-                           :size 16)
+                           :size 14)
       doom-variable-pitch-font (font-spec :family "Roboto"
                                           :size 16))
 

@@ -1,0 +1,3 @@
+# setting ignoring the update of particular zshrc extensions
+# the install messes up oh-my-zsh extensioning
+zshrc
