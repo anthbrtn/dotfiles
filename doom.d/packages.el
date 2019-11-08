@@ -15,3 +15,5 @@
 (package! yasnippet-snippets)
 (package! ivy-bibtex)
 (package! org-journal)
+(package! sublimity)
+(package! typo)

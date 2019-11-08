@@ -1,5 +1,8 @@
 ;;; .doom.d/config.el -*- lexical-binding: t; -*-
 ;; TODO: Flyspell setup, LSP setup, synosaurus setup
+;; eyebrowse setup (easy window configuration)
+;; focus mode (focus.el), which desaturates inactive paragraphs
+;; org-habit, which gives my agenda a weekly habit (that's intense)
 
 ;; ###### INITIALIZATION #####
 
@@ -41,8 +44,14 @@
 ;; this highlights hex colour strings etc as the colour they represent
 (use-package! rainbow-mode)
 
+;; this package has a few things from sublime like minimap and smooth scrolling
+(use-package! sublimity)
+
 ;; this is org-journal, which lets me quickly add and track a journal with SPC-j
 (use-package! org-journal)
+
+;; automatic completion of quote marks, and cycling em-dashes
+(use-package! typo)
 
 ;; INITIALIZATION CONFIGURATION
 ;; this makes it feel personalized and also lets org do some autofilling
@@ -58,11 +67,14 @@
 (unless (server-running-p)
   (server-start))
 
-;; now we can initialize the autocompletion framework itself
-;; this enables us to company-mode autocompletion for every file
+;; now we can initialize the completion framework itself
+;; this enables us to company-mode completion popups for every file
 (require 'company)
 ;; this makes us able to configure what company mode does on initialization
 (add-hook 'after-init-hook 'global-company-mode)
+
+;; this sets up company to autocomplete suggestions that it comes up with
+
 
 ;; this increases the garbage collector threshold, speeding startup
 ;; grabbed from https://github.com/jamiecollinson/dotfiles/blob/master/config.org/
@@ -143,16 +155,19 @@ This is, when it doesn't already have a sudo-prefix."
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 ;; this enables pandoc integration
 (add-hook 'text-mode-hook 'pandoc-mode)
+;; this sets up typo.el for quotations and em dash cycling
+(typo-global-mode 1)
+(add-hook 'text-mode-hook 'typo-mode)
 
 
 ;; ORG MODE
 ;; an organizational tool with its own markup language. Like markdown-plus
 
 ;; this tells the org agenda buffer to read from my todo file
-(setq org-agenda-files '("~/org/todo.org"))
+(setq org-agenda-files '("~/nextcloud/Notes/todo.org"))
 
 ;; this sets the default directory for any built-in org mode file creation
-(setq org-directory "~/nextcloud/")
+(setq org-directory "~/nextcloud/Notes")
 
 ;; this sets the default notes file (called from M-x) to a file inside the above folder
 (setq org-default-notes-file (concat org-directory "/notes.org"))
@@ -193,13 +208,18 @@ This is, when it doesn't already have a sudo-prefix."
 
 ;; AUTOCOMPLETION with COMPANY-MODE
 ;; this sets all text-modes to use our bibtex citekeys completion as default
-(set-company-backend! 'text-mode 'company-bibtex)
+(set-company-backend! 'text-mode 'company-bibtex 'company-ispell 'company-abbrev 'company-dabbrev 'company-files 'company-yasnippet)
 ;; these settings are self-explanatory
 (setq company-minimum-prefix-length 1
       company-idle-delay 0.022
       ;; this sets up what to look for in completing strings
-      completion-styles '(partial-completion initials))
-
+      completion-styles '(partial-completion initials)
+      company-frontends ;; configures behaviour of popup
+      '(company-pseudo-tooltip-unless-just-one-frontend ;; this calls the tooltip
+        company-preview-frontend ;; this displays all completions inline
+        company-echo-metadata-frontend ) ;; not totally sure!
+      company-auto-complete t ;; this sets us up to space hit and complete. might be buggy
+      )
 
 ;; ACADEMIC FUNCTIONS
 
@@ -241,6 +261,18 @@ This is, when it doesn't already have a sudo-prefix."
 (load-theme 'doom-molokai t)
 ;; (load-theme 'doom-nord-light t)
 ;; (load-theme 'doom-spacegrey t)
+
+;; smooth scroll and minimap from sublimity package
+;; find settings at https://github.com/zk-phi/sublimity
+(require 'sublimity)
+(sublimity-mode 1)
+;; smooth scroll settings
+(setq sublimity-scroll-weight 10
+      sublimity-scroll-drift-length 5)
+;; minimap settings
+(setq sublimity-map-size 20)
+(setq sublimity-map-fraction 0.3)
+(setq sublimity-map-text-scale -7)
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)

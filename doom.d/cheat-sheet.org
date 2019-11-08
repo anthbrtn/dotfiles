@@ -197,3 +197,14 @@ Hit <ta then tab
 Hit __project.org then tab
 *** Start new generic org file with title
 Hit __ then tab
+* Useful info from web/dotifiles
+You can use mode hooks to specify a different set of backends for different major modes. For example:
+#+begin_example
+(add-hook 'org-mode-hook
+          (lambda ()
+            (setq-local company-backends '((company-files company-dabbrev)))))
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (setq-local company-backends '((company-capf company-dabbrev-code)))))
+#+end_example
