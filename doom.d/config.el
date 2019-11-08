@@ -213,11 +213,7 @@ This is, when it doesn't already have a sudo-prefix."
 (setq company-minimum-prefix-length 1
       company-idle-delay 0.022
       ;; this sets up what to look for in completing strings
-<<<<<<< HEAD
       completion-styles '(basic initials)
-=======
-      completion-styles '(partial-completion initials)
->>>>>>> 842aa3aecf4abdc3ccd4973e878d0ce4faad6915
       company-frontends ;; configures behaviour of popup
       '(company-pseudo-tooltip-unless-just-one-frontend ;; this calls the tooltip
         company-preview-frontend ;; this displays all completions inline
