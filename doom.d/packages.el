@@ -1,19 +1,38 @@
 ;; -*- no-byte-compile: t; -*-
-;;; .doom.d/packages.el
+;;; $DOOMDIR/packages.el
 
-;;; Examples:
-;; (package! some-package)
-;; (package! another-package :recipe (:host github :repo "username/repo"))
-;; (package! builtin-package :disable t)
-
+;; release. The `unpin!' macro allows you to unpin single packages...
+;(unpin! pinned-package)
+;; ...or multiple packages
+;(unpin! pinned-package another-pinned-package)
+;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
+;(unpin! t)
+;(package! some-package)
+;(package! another-package
+;  :recipe (:host github :repo "username/repo"))
+;; `:files' in the `:recipe':
+;(package! this-package
+;  :recipe (:host github :repo "username/repo"
+;           :files ("some-file.el" "src/lisp/*.el")))
+;(package! builtin-package :disable t)
+;(package! builtin-package :recipe (:nonrecursive t))
+;(package! builtin-package-2 :recipe (:repo "myfork/package"))
+;(package! builtin-package :recipe (:branch "develop"))
 (package! academic-phrases)
 (package! company-bibtex)
-(package! form-feed)
-(package! writegood-mode)
-(package! pandoc-mode)
 (package! rainbow-mode)
-(package! yasnippet-snippets)
-(package! ivy-bibtex)
-(package! org-journal)
-(package! sublimity)
 (package! typo)
+(package! flycheck-vale)
+(package! zop-to-char)
+(package! exec-path-from-shell)
+(package! org-web-tools)
+(package! org-projectile)
+(package! plan9-theme)
+(package! darktooth-theme)
+(package! org-ql)
+(package! org-sidebar)
+(package! company-prescient)
+(package! hl-sentence)
+(package! sublime-themes)
+;; disabled
+(package! hl-line :disable t)
