@@ -1,0 +1,90 @@
+// VSCode / Codium config for Markdown writing 
+
+{
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.startupEditor": "newUntitledFile",
+    "launch": {
+
+        "configurations": [],
+        "compounds": []
+    },
+    "files.hotExit": "onExitAndWindowClose",
+    "font-switcher.enableLivePreview": true,
+    "[markdown]": {
+        // quickSuggestions true will provide suggestions as you type.
+        // If you turn this on and DO NOT want suggestions
+        // for non-wiki-link, non-tag words,
+        "editor.quickSuggestions": true,
+        // This is poorly documented, but seems to offer suggestions
+        // from any word in open document when turned on, which
+        // can be a little distracting in markdown docs:
+        "editor.wordBasedSuggestions": false,
+        "editor.tabSize": 2,
+        // Set this to false if you turn on quickSuggestions
+        // but don't want suggestions for markdown related snippets
+        // as you type:
+        "editor.suggest.showSnippets": false,
+        // anthony-added settings
+        "editor.fontSize": 15,
+        "editor.fontFamily": "'Open Sans','Segoe UI', Arial, Consolas, 'Courier New', monospace",
+        "editor.wordWrapColumn": 64,
+        "editor.renderLineHighlight": "none",
+        "editor.lineHeight": 24,
+        "editor.wordWrap": "bounded",
+        "editor.rulers": [],
+        "editor.occurrencesHighlight": false,
+        "editor.selectionHighlight": false,
+        "editor.foldingHighlight": false,
+        "editor.semanticHighlighting.enabled": false,
+        "editor.renderLineHighlightOnlyWhenFocus": true,
+        "editor.copyWithSyntaxHighlighting": true,
+        "editor.scrollbar.verticalScrollarSize": 0,
+        // "editor.lineDecorationsWidth": 100,
+        "editor.padding.top": 25,
+        "editor.scrollbar.horizontal": "hidden",
+        "editor.scrollbar.vertical": "hidden",
+        "editor.minimap.enabled": false,
+        "editor.overviewRulerBorder": false,
+        "editor.lineNumbers": "off",
+        "editor.glyphMargin": false,
+        "workbench.colorCustomizations": {
+            "editorOverviewRuler.bracketMatchForeground": "#00000000",
+            "editorOverviewRuler.background": "#000000",
+            "editorOverviewRuler.border": "#000000",
+            "editorOverviewRuler.findMatchForeground": "#000000",
+            "editorOverviewRuler.rangeHighlightForeground": "#000000",
+            "editorOverviewRuler.selectionHighlightForeground": "#000000",
+            "editorOverviewRuler.wordHighlightForeground": "#000000",
+            "editorOverviewRuler.wordHighlightStrongForeground": "#000000",
+            "editorOverviewRuler.modifiedForeground": "#000000",
+            "editorOverviewRuler.addedForeground": "#000000",
+            "editorOverviewRuler.deletedForeground": "#000000",
+            "editorOverviewRuler.errorForeground": "#000000",
+            "editorOverviewRuler.wordHighlightStrongForeground": "#000000",            
+            "editorOverviewRuler.warningForeground": "#000000",
+            "editorOverviewRuler.infoForeground": "#000000",
+            "editorOverviewRuler.bracketMatchForeground": "#000000",
+            "editor.hideCursorInOverviewRuler": true,
+            "editorOverviewRuler.errorForeground": "#0000",
+        },
+    },
+    "editor.formatOnType": true,
+    "zenMode.fullScreen": false,
+    "scm.diffDecorations": "none",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.wrappingStrategy": "advanced",
+    "markdown.preview.breaks": true,
+    "editor.matchBrackets": "never",
+    "spellright.language": [
+    
+    ],
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootPath}${separator}${rootName}${separator}${remoteName}",
+    "workbench.activityBar.visible": false,
+    "workbench.sideBar.location": "right",
+    "workbench.statusBar.visible": false
+}
